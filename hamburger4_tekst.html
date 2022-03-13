@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Hamburger - przykład 4</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9"
+        crossorigin="anonymous">
+    <style>
+    .wrapper {
+        margin: 10px 80px;
+        transition: .3s linear;
+    }
+
+    .wrapper.show {
+        padding-left: 300px;
+    }
+
+    .burger {
+        position: absolute;
+        top: 40px;
+        right: 40px;
+        font-size: 40px;
+        line-height: 50px;
+        transition: .3s linear;
+    }
+
+    .burger:hover {
+        cursor: pointer;
+    }
+
+    aside {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: -300px;
+        width: 300px;
+        background-color: #000;
+        transition: .3s linear;
+    }
+
+    .fas {
+        display: none;
+        color: gray;
+    }
+
+    i.show {
+        display: block;
+    }
+
+    aside.show {
+        left: 0;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper active">
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae mollitia et ab laborum? Omnis impedit sit mollitia
+            a reprehenderit aperiam natus, rerum inventore iusto dignissimos enim deserunt quibusdam rem eaque? Voluptatibus
+            quis atque porro quia veritatis accusantium debitis tempore, et libero blanditiis pariatur cupiditate, accusamus
+            aperiam eveniet commodi cumque aut assumenda eum exercitationem molestiae molestias minima velit numquam. Cupiditate,
+            officiis. Esse placeat quaerat eaque dolores saepe, labore nihil ipsam voluptate quidem iure dolorum atque, dolor
+            alias ab necessitatibus dolorem ullam doloremque hic dicta obcaecati nam iusto tempore. Ducimus, ipsa optio!
+            Maxime repellendus temporibus deserunt culpa hic magni explicabo esse molestias dolorum possimus recusandae laudantium
+            iste cupiditate rerum, sequi quae aperiam nam, mollitia veritatis doloremque voluptatem laborum assumenda exercitationem
+            consectetur? Ullam! Officiis ducimus beatae, quaerat minus laboriosam necessitatibus eius iure architecto, ea
+            unde libero? Laudantium saepe reiciendis, aspernatur, corrupti beatae vel quas molestias porro voluptas expedita
+            illo quia sapiente minima totam?</p>
+    </div>
+    <div class="burger">
+        <i class="fas fa-bars show active "></i>
+        <i class="fas fa-times active"></i>
+    </div>
+    <aside class="active">
+        <nav></nav>
+    </aside>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script>
+            
+    const burger = document.querySelector(".burger");
+    const activeElement = document.querySelectorAll(".active");
+
+    burger.addEventListener("click", function () {
+        for (let i = 0; i < activeElement.length; i++) {
+            activeElement[i].classList.toggle("show")
+        }
+    })
+
+    </script>
+</body>
+
+</html>
